@@ -34,7 +34,6 @@ lsp.on_attach(function(client, bufnr)
 
 	vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
 	vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
-	vim.keymap.set('n', '<Tab>', '<S-Tab>')
 end)
 
 lsp.setup()
@@ -43,5 +42,6 @@ lsp.setup()
 cmp.setup({
 	mapping = {
 		['<CR>'] = cmp.mapping.confirm({ select = false }),
+		['<C-Space>'] = cmp.mapping.complete(),
 	}
 })

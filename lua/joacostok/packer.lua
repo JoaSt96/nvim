@@ -92,10 +92,6 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	use {
-		"ray-x/lsp_signature.nvim",
-	}
-
 	use { 'terrortylor/nvim-comment' }
 
 	use { 'xiyaowong/transparent.nvim' }
@@ -106,4 +102,12 @@ return require('packer').startup(function(use)
 	}
 
 	use { 'mg979/vim-visual-multi' }
+
+	use{'jose-elias-alvarez/null-ls.nvim'}
+
+	use{'github/copilot.vim'}
+
+	use {
+			"ray-x/lsp_signature.nvim",
+	}
 end)
