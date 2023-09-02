@@ -38,6 +38,10 @@ return require('packer').startup(function(use)
 			{ 'hrsh7th/nvim-cmp' }, -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 			{ 'L3MON4D3/LuaSnip' }, -- Required
+
+			-- Snippets
+			{ 'L3MON4D3/LuaSnip' },
+			{ 'rafamadriz/friendly-snippets' },
 		}
 	})
 
@@ -103,11 +107,20 @@ return require('packer').startup(function(use)
 
 	use { 'mg979/vim-visual-multi' }
 
-	use{'jose-elias-alvarez/null-ls.nvim'}
+	use { 'jose-elias-alvarez/null-ls.nvim' }
 
-	use{'github/copilot.vim'}
+	use { 'github/copilot.vim' }
 
 	use {
-			"ray-x/lsp_signature.nvim",
+		"ray-x/lsp_signature.nvim",
+	}
+
+	use({
+		'nvimdev/lspsaga.nvim',
+		after = 'nvim-lspconfig',
+	})
+
+	use {
+		'dinhhuy258/git.nvim'
 	}
 end)

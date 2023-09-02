@@ -5,3 +5,4 @@ vim.keymap.set('n', '<leader>t', function()
 		builtin.grep_string({ sertrch = vim.fn.input("Grep > ") })
 end)
 vim.keymap.set('n','<leader>st',builtin.live_grep,{})
+
