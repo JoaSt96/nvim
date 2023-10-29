@@ -111,9 +111,6 @@ return require('packer').startup(function(use)
 
     use { 'github/copilot.vim' }
 
-    use {
-        "ray-x/lsp_signature.nvim",
-    }
 
     use({
         'nvimdev/lspsaga.nvim',
@@ -122,5 +119,9 @@ return require('packer').startup(function(use)
 
     use {
         'dinhhuy258/git.nvim'
+    }
+
+    use {
+        'lewis6991/gitsigns.nvim'
     }
 end)
