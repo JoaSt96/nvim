@@ -96,7 +96,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use { 'numToStr/Comment.nvim'}
+    use { 'numToStr/Comment.nvim' }
 
     use { 'xiyaowong/transparent.nvim' }
 
@@ -124,4 +124,38 @@ return require('packer').startup(function(use)
     use {
         'lewis6991/gitsigns.nvim'
     }
+
+    use {
+        "SmiteshP/nvim-navbuddy",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+            "numToStr/Comment.nvim",        -- Optional
+            "nvim-telescope/telescope.nvim" -- Optional
+        }
+    }
+
+    use {
+        'norcalli/nvim-colorizer.lua'
+    }
+
+    use {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    }
+
+    use { 'nvim-tree/nvim-web-devicons' }
+
+    use { 'nvim-lua/plenary.nvim' }
+    use { 'nvim-pack/nvim-spectre' }
+
+    use { "akinsho/toggleterm.nvim", tag = '*' }
+
+    use { 'stevearc/oil.nvim' }
 end)
