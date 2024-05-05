@@ -158,4 +158,9 @@ return require('packer').startup(function(use)
     use { "akinsho/toggleterm.nvim", tag = '*' }
 
     use { 'stevearc/oil.nvim' }
+
+    use {
+        "williamboman/nvim-lsp-installer",
+        "neovim/nvim-lspconfig",
+    }
 end)
