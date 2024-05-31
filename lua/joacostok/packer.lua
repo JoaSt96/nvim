@@ -24,7 +24,6 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
-    use { 'sainnhe/gruvbox-material' }
     use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -163,4 +162,8 @@ return require('packer').startup(function(use)
         "williamboman/nvim-lsp-installer",
         "neovim/nvim-lspconfig",
     }
+
+    use { 'mhartington/formatter.nvim' }
+
+use { "ellisonleao/gruvbox.nvim" }
 end)
