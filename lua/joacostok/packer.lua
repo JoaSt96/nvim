@@ -8,15 +8,21 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+                -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+        }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('nvim-treesitter/playground')
+
     use('ThePrimeagen/harpoon')
+
+use {
+    "williamboman/mason.nvim"
+}
+
     use('mbbill/undotree')
+
     use({
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
@@ -24,6 +30,7 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
+
     use({
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -50,10 +57,6 @@ return require('packer').startup(function(use)
     })
 
     use({
-        "rmagatti/goto-preview",
-    })
-
-    use({
         'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional
@@ -63,8 +66,6 @@ return require('packer').startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
 
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
-
-    use { 'navarasu/onedark.nvim' }
 
     use {
         'phaazon/hop.nvim',
@@ -125,45 +126,25 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "SmiteshP/nvim-navbuddy",
-        requires = {
-            "neovim/nvim-lspconfig",
-            "SmiteshP/nvim-navic",
-            "MunifTanjim/nui.nvim",
-            "numToStr/Comment.nvim",        -- Optional
-            "nvim-telescope/telescope.nvim" -- Optional
-        }
-    }
-
-    use {
         'norcalli/nvim-colorizer.lua'
     }
 
     use {
         "folke/trouble.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
     }
 
     use { 'nvim-tree/nvim-web-devicons' }
 
-    use { 'nvim-lua/plenary.nvim' }
-    use { 'nvim-pack/nvim-spectre' }
-
     use { "akinsho/toggleterm.nvim", tag = '*' }
-
-    use { 'stevearc/oil.nvim' }
-
-    use {
-        "williamboman/nvim-lsp-installer",
-        "neovim/nvim-lspconfig",
-    }
 
     use { 'mhartington/formatter.nvim' }
 
-use { "ellisonleao/gruvbox.nvim" }
+    use { "ellisonleao/gruvbox.nvim" }
+
+    use 'mfussenegger/nvim-lint'
+
+ use({
+    "stevearc/conform.nvim",
+     })
 end)
