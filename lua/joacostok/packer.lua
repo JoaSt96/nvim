@@ -107,7 +107,6 @@ use {
 
     use { 'mg979/vim-visual-multi' }
 
-    use { 'jose-elias-alvarez/null-ls.nvim' }
 
     use { 'github/copilot.vim' }
 
