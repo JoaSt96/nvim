@@ -1,3 +1,2 @@
-require('joacostok')
-vim.opt.relativenumber = true
-vim.opt.nu = true
+require("stok.core")
+require("stok.lazy")
