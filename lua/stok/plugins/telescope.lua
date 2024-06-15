@@ -6,6 +6,7 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
 		"folke/todo-comments.nvim",
+		"nvim-treesitter/nvim-treesitter",
 	},
 	config = function()
 		-- set keymaps
@@ -22,7 +23,7 @@ return {
 		local keymap = vim.keymap -- for conciseness
 
 		keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-		keymap.set("n", "<leader>st", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+		keymap.set("n", "<leader>ft", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		-- keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 	end,
 }
