@@ -13,6 +13,8 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+-- make cursor always a block cursor in all modes
+vim.opt.guicursor = "n-v-c:block-Cursor/lCursor"
 vim.opt.backup = false
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
