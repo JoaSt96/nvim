@@ -34,8 +34,6 @@ return {
 				"svelte",
 				"lua_ls",
 				"graphql",
-				"denols",
-				"emmet_ls",
 				"prismals",
 				"pyright",
 			},
@@ -44,7 +42,6 @@ return {
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"prettier", -- prettier formatter
-				"eslint", -- eslint formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter
