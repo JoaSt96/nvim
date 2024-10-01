@@ -7,7 +7,7 @@ return {
 
         lualine.setup({
             options = {
-                theme = 'gruvbox',
+                theme = "gruvbox",
             },
             sections = {
                 lualine_x = {

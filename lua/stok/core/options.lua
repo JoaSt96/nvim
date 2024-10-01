@@ -16,7 +16,7 @@ vim.opt.expandtab = true
 -- make cursor always a block cursor in all modes
 vim.opt.guicursor = "n-v-c:block-Cursor/lCursor"
 vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.api.nvim_set_option("clipboard", "unnamed")
 vim.opt.termguicolors = true
