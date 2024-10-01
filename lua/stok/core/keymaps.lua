@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
-vim.keymap.set("n", "<leader>Q", vim.cmd.qa)
+vim.keymap.set("n", "<C-q>", vim.cmd.qa)
 
 -- mover el texto seleccionado con J y K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -53,3 +53,7 @@ end)
 
 vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
 vim.keymap.set("n", "<leader>bb", vim.cmd.bprev)
+
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("so")
+end)
