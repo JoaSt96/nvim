@@ -146,7 +146,6 @@ return {
             },
             sources = {
                 { name = "nvim_lsp" },
-                { name = "luasnip", keyword_length = 2 },
                 { name = "buffer",  keyword_length = 3 },
                 { name = "path" },
             },
@@ -160,6 +159,24 @@ return {
                 -- ["<Tab>"] = cmp_action.luasnip_supertab(),
                 ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
             }),
+            formatting = {
+                -- changing the order of fields so the icon is the first
+                fields = { "menu", "abbr", "kind" },
+
+                -- here is where the change happens
+                format = function(entry, item)
+                    local menu_icon = {
+                        buffer = "Ω",
+                        nvim_lsp = "λ",
+                        luasnip = "⋗",
+                        path = "🖫",
+                        nvim_lua = "Π",
+                    }
+
+                    item.menu = menu_icon[entry.source.name]
+                    return item
+                end,
+            },
         })
     end,
 }
