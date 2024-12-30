@@ -12,11 +12,8 @@ return {
                 "html",
                 "css",
                 "json",
-                "c",
                 "lua",
-                "rust",
                 "jsdoc",
-                "bash",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
