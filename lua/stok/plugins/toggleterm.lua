@@ -1,10 +1,11 @@
 return {
-  'akinsho/toggleterm.nvim',
+  "akinsho/toggleterm.nvim",
   config = function()
-    require("toggleterm").setup()
-    vim.keymap.set("n", "<leader>tt", "<cmd>lua require('toggleterm').toggle()<CR>", {
-      desc = "Toggle terminal"
+    require("toggleterm").setup({
+      direction = "float",
     })
-  end
-
+    vim.keymap.set("n", "<leader>tt", "<cmd>lua require('toggleterm').toggle()<CR>", {
+      desc = "Toggle terminal",
+    })
+  end,
 }
