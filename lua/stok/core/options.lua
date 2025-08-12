@@ -7,7 +7,7 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 -- vim.opt.isfname:append("@-@")
-vim.opt.updatetime = 50
+vim.opt.updatetime = 250
 vim.g.mapleader = " "
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4

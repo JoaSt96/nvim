@@ -1,2 +1,28 @@
-.ds_Store
+# Neovim specific
+.DS_Store
+*.log
+*.tmp
 /plugin
+
+# Personal/local files
+local.lua
+secrets.lua
+personal.lua
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.local
+.env.*.local

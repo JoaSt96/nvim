@@ -13,7 +13,7 @@ return {
         override = {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+          ["cmp.entry.get_documentation"] = true,
         },
       },
       presets = {
@@ -24,17 +24,5 @@ return {
         lsp_doc_border = false, -- add a border to hover docs and signature help
       },
     })
-    -- require("noice").setup({
-    --   routes = {
-    --     {
-    --       filter = {
-    --         event = "msg_show",
-    --         kind = "",
-    --         find = "written",
-    --       },
-    --       opts = { skip = true },
-    --     },
-    --   },
-    -- })
   end,
 }
