@@ -25,21 +25,27 @@ This is a minimal, fast Neovim configuration focused on code review with LSP sup
 │       ├── gitsigns.lua    # Git gutter indicators
 │       ├── lazygit.lua     # Git UI
 │       ├── hop.lua         # Quick jumping
-│       └── formatter.lua   # Prettier/stylua
+│       ├── formatter.lua   # Prettier/stylua
+│       ├── neo-tree.lua    # Sidebar file tree
+│       └── bufferline.lua  # Tab bar for buffers
 ```
 
-## Plugins (13 total)
+## Plugins (14 total)
 - **Plugin Manager**: lazy.nvim
 - **LSP**: mason + nvim-lspconfig + blink.cmp
 - **Fuzzy Finder**: telescope + fzf-native
 - **Git**: lazygit + gitsigns
 - **Navigation**: hop.nvim
+- **File Explorer**: neo-tree.nvim (sidebar tree)
+- **Tabs**: bufferline.nvim
 - **Formatting**: conform.nvim (prettier, stylua)
 - **Syntax**: nvim-treesitter
 - **Theme**: tokyonight
 
 ## Key Bindings
 - Leader: `<Space>`
+- `<leader>ee` — Toggle file explorer (neo-tree)
+- `<leader>bn` / `<leader>bb` — Next / previous tab
 - `<leader>ff` — Find files
 - `<leader>ft` — Live grep
 - `<leader>gg` — LazyGit

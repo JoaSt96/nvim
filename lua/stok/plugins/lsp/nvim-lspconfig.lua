@@ -4,13 +4,9 @@ return {
   event = { "BufReadPre", "BufNewFile" },
 
   config = function()
-    -- Configure diagnostics
+    -- Configure diagnostics (virtual_text disabled — tiny-inline-diagnostic handles it)
     vim.diagnostic.config({
-      virtual_text = {
-        spacing = 4,
-        source = "if_many",
-        prefix = "●",
-      },
+      virtual_text = false,
       update_in_insert = false,
       underline = true,
       severity_sort = true,
@@ -124,7 +120,20 @@ return {
       capabilities = require('blink.cmp').get_lsp_capabilities(),
     })
 
+    -- ESLint: run diagnostics on every text change, not just on save
+    vim.lsp.config('eslint', {
+      settings = {
+        eslint = {
+          run = "onType",
+          format = false,
+        },
+      },
+    })
+
     -- Enable servers
-    vim.lsp.enable({ 'lua_ls', 'ts_ls' })
+    -- biome: attaches when biome.json/biome.jsonc exists in project
+    -- eslint: attaches when .eslintrc.*/eslint.config.* exists in project
+    -- Both auto-detect via root_markers, so the right linter activates per project
+    vim.lsp.enable({ 'lua_ls', 'ts_ls', 'biome', 'eslint' })
   end,
 }

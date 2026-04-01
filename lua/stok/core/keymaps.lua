@@ -54,8 +54,7 @@ vim.keymap.set("n", "<C-j>", function()
   vim.cmd.wincmd("j")
 end)
 
-vim.keymap.set("n", "<leader>bn", vim.cmd.bnext)
-vim.keymap.set("n", "<leader>bb", vim.cmd.bprev)
+-- buffer navigation moved to bufferline.lua plugin keys
 
 vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
