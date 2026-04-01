@@ -139,7 +139,6 @@ Leader key: `<Space>`
 - **autopairs** - Auto-close brackets
 - **comment.nvim** - Easy commenting
 - **cloak.nvim** - Hide secrets
-- **supermaven-nvim** - AI completion
 
 ### Development Tools
 - **conform.nvim** - Formatting

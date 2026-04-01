@@ -3,14 +3,7 @@ return {
   dependencies = { "saghen/blink.cmp" },
   event = { "BufReadPre", "BufNewFile" },
 
-  opts = {
-    servers = {
-      lua_ls = {},
-      ts_ls = {},
-    },
-  },
-
-  config = function(_, opts)
+  config = function()
     -- Configure diagnostics
     vim.diagnostic.config({
       virtual_text = {
@@ -126,11 +119,12 @@ return {
       end,
     })
 
-    -- Setup LSP servers
-    local lspconfig = require("lspconfig")
-    for server, config in pairs(opts.servers) do
-      config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-      lspconfig[server].setup(config)
-    end
+    -- Set capabilities globally for all servers
+    vim.lsp.config('*', {
+      capabilities = require('blink.cmp').get_lsp_capabilities(),
+    })
+
+    -- Enable servers
+    vim.lsp.enable({ 'lua_ls', 'ts_ls' })
   end,
 }
