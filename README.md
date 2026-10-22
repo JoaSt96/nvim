@@ -62,7 +62,7 @@ Leader key: `<Space>`
 - `S` - Hop to 2-character combination
 
 ### LSP (Language Server)
-- `gd` - Go to definition
+- `gd` - Go to definition, preferring project files before external library definitions
 - `gD` - Go to declaration
 - `gi` - Go to implementation
 - `gr` - Go to references

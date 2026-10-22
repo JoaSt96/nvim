@@ -4,6 +4,8 @@ return {
   event = { "BufReadPre", "BufNewFile" },
 
   config = function()
+    local navigation = require("stok.lsp.navigation")
+
     -- Configure diagnostics (virtual_text disabled — tiny-inline-diagnostic handles it)
     vim.diagnostic.config({
       virtual_text = false,
@@ -73,40 +75,40 @@ return {
       callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         local bufnr = args.buf
-        
+
         if client then
           -- Disable certain features for better performance
           client.server_capabilities.documentFormattingProvider = false
           client.server_capabilities.documentRangeFormattingProvider = false
         end
-        
+
         -- LSP Keymaps
         local map = function(keys, func, desc)
           vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
         end
-        
+
         -- Navigation
-        map('gd', vim.lsp.buf.definition, 'Go to Definition')
+        map('gd', navigation.goto_definition_prefer_local, 'Go to Definition')
         map('gD', vim.lsp.buf.declaration, 'Go to Declaration')
         map('gi', vim.lsp.buf.implementation, 'Go to Implementation')
         map('gr', vim.lsp.buf.references, 'Go to References')
         map('gt', vim.lsp.buf.type_definition, 'Go to Type Definition')
-        
+
         -- Hover and signature
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
         map('<leader>k', vim.lsp.buf.signature_help, 'Signature Help')
-        
+
         -- Workspace
         map('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Add Workspace Folder')
         map('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Remove Workspace Folder')
         map('<leader>wl', function()
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, 'List Workspace Folders')
-        
+
         -- Actions
         map('<leader>rn', vim.lsp.buf.rename, 'Rename')
         map('<leader>ac', vim.lsp.buf.code_action, 'Code Action')
-        
+
         -- Diagnostics
         map('[d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
         map(']d', vim.diagnostic.goto_next, 'Next Diagnostic')

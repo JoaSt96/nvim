@@ -1,5 +1,5 @@
 return {
-  "phaazon/hop.nvim",
+  "smoka7/hop.nvim",
   keys = {
     { "S", vim.cmd.HopChar2, desc = "Hop to 2 chars" },
     { "s", vim.cmd.HopWord, desc = "Hop to word" },

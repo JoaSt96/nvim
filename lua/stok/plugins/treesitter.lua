@@ -2,6 +2,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
+        local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+        -- The Lua grammar repository defaults to main, while this compatible
+        -- nvim-treesitter branch otherwise requests an obsolete master archive.
+        treesitter_parser_config.lua.install_info.branch = "main"
+
         require("nvim-treesitter.configs").setup({
             -- A list of parser names, or "all"
             ensure_installed = {
@@ -39,7 +45,6 @@ return {
             },
         })
 
-        local treesitter_parser_config = require("nvim-treesitter.parsers").get_parser_configs()
         treesitter_parser_config.templ = {
             install_info = {
                 url = "https://github.com/vrischmann/tree-sitter-templ.git",
